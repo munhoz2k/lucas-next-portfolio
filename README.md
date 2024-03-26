@@ -1,5 +1,3 @@
-Welcome to my portfolio, it's still in development and it will be deployed soon on [Vercel](https://vercel.com/munhoz2ks-projects)...
-
 <h1>Lucas Next Portfolio</h1>
 <p>
  <a href="#about">About</a> • 
@@ -7,6 +5,8 @@ Welcome to my portfolio, it's still in development and it will be deployed soon 
  <a href="#how-to-install">How to install</a> • 
  <a href="#contributing">Contributing</a> • 
 </p>
+
+Welcome to my portfolio, it's still in development and it will be deployed soon on [Vercel](https://vercel.com/munhoz2ks-projects)...
 
 # About
 - This is my beautiful portfolio made with [Next.js](https://nextjs.org/) containing all my professional infos
