@@ -26,7 +26,7 @@ export default function NavBar() {
   const [navBarOpen, setNavBarOpen] = useState(false)
 
   return (
-    <nav className='fixed top-0 left-0 right-0 z-10 bg-dark-shades/90'>
+    <nav className='fixed top-0 left-0 right-0 z-10 bg-zinc-800/80'>
       <div className='flex flex-wrap items-center justify-between px-6 md:px-12 lg:px-20 py-4'>
         <Link
           className='md:text-3xl text-2xl font-semibold text-light-shades'

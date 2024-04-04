@@ -2,12 +2,12 @@
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
 
-import ilustrationGif from '../../../public/ilustration.gif'
+import ilustration from '../../../public/ilustration-intro.png'
 
 export default function HeroSection() {
   return (
-    <section className='max-md:mt-12 h-full'>
-      <div className='grid grid-cols-1 md:grid-cols-12 h-full'>
+    <section className='max-md:mt-12 md:translate-x-12'>
+      <div className='grid grid-cols-1 md:grid-cols-12'>
         <div className='col-span-7 place-self-center'>
           <h1 className='mb-4 text-center md:text-left font-extrabold'>
             <span
@@ -40,15 +40,15 @@ export default function HeroSection() {
 
           <div>
             <button
-              className='px-6 py-2 mr-4 mb-2 w-full rounded-md border-none bg-brand-color text-light-shades text-lg
-              hover:px-12 hover:brightness-125 transition-all duration-500
+              className='px-6 py-2 mr-4 mb-2 w-full rounded-md bg-brand-color text-light-shades text-lg
+              md:hover:px-12 hover:brightness-125 transition-all duration-500
               md:mb-0 md:w-fit lg:px-10 lg:text-2xl lg:hover:px-16'
             >
               Hire me
             </button>
             <button
-              className='px-6 py-2 w-full rounded-md border-none bg-dark-accent text-light-shades text-lg
-              hover:px-12 hover:brightness-110 transition-all duration-500
+              className='px-6 py-2 w-full rounded-md bg-dark-accent text-light-shades text-lg
+              md:hover:px-12 hover:brightness-110 transition-all duration-500
               lg:px-10 md:w-fit lg:text-2xl lg:hover:px-16'
             >
               Download CV
@@ -57,9 +57,12 @@ export default function HeroSection() {
         </div>
 
         <div
-          className='col-span-5 place-self-center mt-8 md:mt-0'
+          className='col-span-5 place-self-end mt-8 md:mt-0 max-md:hidden'
         >
-          <Image src={ilustrationGif} alt='GIF' />
+          <Image
+            src={ilustration}
+            alt='GIF'
+          />
         </div>
       </div>
     </section>
