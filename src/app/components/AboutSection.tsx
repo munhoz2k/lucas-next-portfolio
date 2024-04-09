@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-import ilustration from '../../../public/ilustration-about-me.png'
+import ilustration from '../../../public/images/ilustration-about-me.png'
 import Link from 'next/link'
 import { GithubLogo, InstagramLogo, LinkedinLogo } from 'phosphor-react'
 
@@ -15,14 +15,14 @@ export default function AboutSection() {
         md:grid md:grid-cols-2 xl:gap-16'
       >
         <Image
-          className='size-[420px] object-contain mb-8
+          className='animated size-[420px] object-contain mb-8
           md:mb-0 max-md:mx-auto'
           src={ilustration}
           alt='Ilustração de um programador'
         />
 
         <div>
-          <h2 className='mb-4 text-4xl font-bold text-dark-shades'>
+          <h2 className='mb-4 text-4xl font-bold text-black'>
             About Me
           </h2>
 
@@ -33,7 +33,7 @@ export default function AboutSection() {
             explicabo tempore, ipsa saepe quo dolores molestiae.
           </p>
 
-          <div className='flex gap-8 mt-10'>
+          <div className='flex gap-8 mt-10 max-[390px]:flex-col'>
             <Link
               className='flex h-fit p-1 rounded-2xl transition-colors
               hover:bg-brand-color hover:text-light-shades'

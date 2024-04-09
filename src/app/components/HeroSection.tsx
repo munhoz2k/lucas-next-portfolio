@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
 
-import ilustration from '../../../public/ilustration-intro.png'
+import ilustration from '../../../public/images/ilustration-intro.png'
 
 export default function HeroSection() {
   return (
@@ -18,7 +18,7 @@ export default function HeroSection() {
             </span>
 
             <TypeAnimation
-              className='text-3xl md:text-4xl lg:text-5xl text-dark-shades'
+              className='text-3xl md:text-4xl lg:text-5xl text-black'
               sequence={[
                 'Lucas Munhoz',
                 1000,
@@ -60,6 +60,7 @@ export default function HeroSection() {
           className='col-span-5 place-self-end mt-8 md:mt-0 max-md:hidden'
         >
           <Image
+            className='animated'
             src={ilustration}
             alt='GIF'
           />
