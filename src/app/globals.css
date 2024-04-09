@@ -34,6 +34,6 @@ body {
   100% { transform: translateY(0); }
 }
 
-img {
+.animated {
   animation: translateY 2s linear infinite;
 }
