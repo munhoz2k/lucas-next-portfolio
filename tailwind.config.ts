@@ -20,6 +20,12 @@ const config: Config = {
         'dark-accent': '#7C7E97',
         'dark-shades': '#372A40',
       },
+      boxShadow: {
+        'style-1': `rgba(0, 0, 0, 0.15) 5px 5px, rgba(0, 0, 0, 0.15) 10px 10px,
+        rgba(0, 0, 0, 0.10) 15px 15px, rgba(0, 0, 0, 0.05) 20px 20px`,
+
+        'style-2': `rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px`,
+      }
     },
   },
   plugins: [],
