@@ -1,7 +1,7 @@
-import HeroSection from '@/app/components/HeroSection'
-import NavBar from '@/app/components/NavBar'
-import AboutSection from './components/AboutSection'
-import ProjectsSection from './components/ProjectsSection'
+import HeroSection from '@/app/components/hero/HeroSection'
+import NavBar from '@/app/components/nav/NavBar'
+import AboutSection from './components/about/AboutSection'
+import ProjectsSection from './components/projects/ProjectsSection'
 
 export default function Home() {
   return (

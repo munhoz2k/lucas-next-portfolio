@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { Code, List, X } from "phosphor-react";
 
 import NavLink, { NavLinkProps } from "./NavLink";
-import { List, X } from "phosphor-react";
 import MenuOverlay from "./MenuOverlay";
 
 const navLinks: NavLinkProps[] = [
@@ -29,10 +29,10 @@ export default function NavBar() {
     <nav className='fixed top-0 left-0 right-0 z-10 bg-zinc-800/80'>
       <div className='flex flex-wrap items-center justify-between px-6 md:px-12 lg:px-20 py-4'>
         <Link
-          className='md:text-3xl text-2xl font-semibold text-light-shades'
+          className='md:text-3xl text-2xl font-semibold text-light-shades hover:text-brand-color'
           href='/'
         >
-          Logo
+          <Code className="size-12 " />
         </Link>
 
         <div className='block md:hidden' id='mobile-menu'>
