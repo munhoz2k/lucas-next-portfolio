@@ -56,7 +56,7 @@ const projectsData = [
 
 export default function ProjectsSection() {
   return (
-    <div className='mt-56'>
+    <div className='mt-48'>
       <h2
         className='mb-16 text-center font-bold text-4xl text-black'
       >
