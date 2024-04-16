@@ -38,17 +38,20 @@ export default function HeroSection() {
             voluptatibus et omnis asperiores!
           </p>
 
-          <div>
+          <div className='max-md:space-y-4'>
             <button
-              className='px-6 py-2 mr-4 mb-2 w-full rounded-md bg-brand-color text-light-shades text-lg
-              md:hover:px-12 lg:hover:px-16 hover:brightness-125 hover:shadow-hover-1 hover:-translate-y-[2px]
-              md:mb-0 md:w-fit lg:px-10 lg:text-2xl transition-all duration-300'
+              className='px-10 py-2 w-full bg-zinc-300 text-dark-shades text-lg
+              rounded-xl shadow-md ring-1 ring-zinc-400 outline-none hover:ring-2
+              hover:ring-brand-color hover:shadow-lg hover:shadow-brand-color hover:-translate-y-1
+              md:mr-4 md:w-fit lg:px-10 lg:text-2xl transition-all duration-300'
             >
               Hire me
             </button>
+
             <button
-              className='px-6 py-2 w-full rounded-md bg-dark-accent text-light-shades text-lg
-              md:hover:px-12 lg:hover:px-16 hover:brightness-110 hover:shadow-hover-1 hover:-translate-y-[2px]
+              className='px-10 py-2 w-full bg-dark-accent text-light-shades text-lg
+              rounded-xl shadow-md outline-none hover:ring-2 hover:ring-brand-color
+              hover:shadow-lg hover:shadow-brand-color hover:-translate-y-1
               lg:px-10 md:w-fit lg:text-2xl transition-all duration-300'
             >
               Download CV
