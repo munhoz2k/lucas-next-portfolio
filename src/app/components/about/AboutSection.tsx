@@ -4,8 +4,6 @@ import Image from 'next/image'
 import React from 'react'
 
 import ilustration from '/public/images/ilustration-about-me.png'
-import Link from 'next/link'
-import { GithubLogo, InstagramLogo, LinkedinLogo } from 'phosphor-react'
 
 export default function AboutSection() {
   return (
@@ -27,71 +25,13 @@ export default function AboutSection() {
           </h2>
 
           <p className='text-base lg:text-lg'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Rem eos quaerat hic sint molestias perferendis, eligendi
-            similique incidunt soluta mollitia quisquam blanditiis modi,
-            explicabo tempore, ipsa saepe quo dolores molestiae.
+            Passionate about web development, programming, softwares, how software works,
+            how it is made and also passionate about games. In 2020 I was still wondering
+            myself what I would do for living, it was at that time I learned how softwares
+            were made. I decide to specialize in web development at the end of 2021 learning HTML,
+            CSS, JavaScript and following the banck-end specialization path using Express,
+            TypeScript and NodeJS. And today I'm working creating web pages with React and NextJS.
           </p>
-
-          <div className='flex gap-8 mt-10 max-[390px]:flex-col'>
-
-            <div className='group relative'>
-              <Link
-                className='relative flex h-fit p-1 rounded-2xl transition-colors
-                hover:bg-brand-color hover:text-light-shades'
-                href="https://www.instagram.com/munhoz2k/"
-              >
-                <InstagramLogo size={64} />
-              </Link>
-              
-              <span
-                className='absolute z-20 px-3 py-2 -bottom-12 left-[50%] -translate-x-[50%]
-                rounded-lg border border-gray-300 bg-white text-sm font-bold
-                transition-all duration-300 origin-top ease-in-out scale-0 -translate-y-5 
-                group-hover:scale-100 group-hover:-translate-y-0'
-              >
-                Instagram
-              </span>
-            </div>
-
-            <div className='group relative'>
-              <Link
-                className='relative flex h-fit p-1 rounded-2xl transition-colors
-                hover:bg-brand-color hover:text-light-shades'
-                href="https://www.instagram.com/munhoz2k/"
-              >
-                <LinkedinLogo size={64} />
-              </Link>
-              
-              <span
-                className='absolute z-20 px-3 py-2 -bottom-12 left-[50%] -translate-x-[50%]
-                rounded-lg border border-gray-300 bg-white text-sm font-bold
-                transition-all duration-300 origin-top ease-in-out scale-0 -translate-y-5 
-                group-hover:scale-100 group-hover:-translate-y-0'
-              >
-                LinkedIn
-              </span>
-            </div>
-
-            <div className='group relative'>
-              <Link
-                className='relative flex h-fit p-1 rounded-2xl transition-colors
-                hover:bg-brand-color hover:text-light-shades'
-                href="https://www.instagram.com/munhoz2k/"
-              >
-                <GithubLogo size={64} />
-              </Link>
-              
-              <span
-                className='absolute z-20 px-3 py-2 -bottom-12 left-[50%] -translate-x-[50%]
-                rounded-lg border border-gray-300 bg-white text-sm font-bold
-                transition-all duration-300 origin-top ease-in-out scale-0 -translate-y-5 
-                group-hover:scale-100 group-hover:-translate-y-0'
-              >
-                GitHub
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
