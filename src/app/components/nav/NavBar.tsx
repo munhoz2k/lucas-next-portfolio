@@ -10,11 +10,15 @@ import MenuOverlay from "./MenuOverlay";
 const navLinks: NavLinkProps[] = [
   {
     title: 'About',
-    href: '#about'
+    href: '#about-me'
+  },
+  {
+    title: 'Skills',
+    href: '#my-skills'
   },
   {
     title: 'Projects',
-    href: '#projects'
+    href: '#my-projects'
   },
   {
     title: 'Contact',
@@ -56,7 +60,7 @@ export default function NavBar() {
         </div>
 
         <div className='hidden md:block md:w-auto' id='menu'>
-          <ul className='flex p-0 flex-row space-x-8'>
+          <ul className='flex flex-row space-x-8'>
             {navLinks.map((link, index) => {
               return (
                 <li key={index}>
