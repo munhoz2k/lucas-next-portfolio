@@ -2,11 +2,11 @@
 
 import Link from 'next/link'
 import React from 'react'
-import { GithubLogo, InstagramLogo, LinkedinLogo } from 'phosphor-react'
+import { GithubLogo, LinkedinLogo } from 'phosphor-react'
 
 export default function EmailSection() {
   return (
-    <section className='grid md:grid-cols-2 gap-4 mb-12 mt-48 py-24 px-4'>
+    <section className='grid max-sm:p-0 md:grid-cols-2 gap-4 mb-12 mt-48 py-24 px-4'>
       <div>
         <h5 className='text-xl text-black font-bold my-2'>
           Let's Connect

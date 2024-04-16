@@ -20,9 +20,9 @@ export default function AboutSection() {
         />
 
         <div>
-          <h2 className='mb-4 text-4xl font-bold text-black'>
+          <h1 className='mb-4 text-4xl font-bold text-black'>
             About Me
-          </h2>
+          </h1>
 
           <p className='text-base lg:text-lg'>
             Passionate about web development, programming, softwares, how software works,
