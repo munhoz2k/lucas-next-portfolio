@@ -57,11 +57,11 @@ const projectsData = [
 export default function ProjectsSection() {
   return (
     <div className='mt-48'>
-      <h2
+      <h1
         className='mb-16 text-center font-bold text-4xl text-black'
       >
         My Projects
-      </h2>
+      </h1>
 
       <div
         className='grid lg:grid-cols-2 gap-16'
