@@ -1,23 +1,49 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-import { ReactEmailTemplate, SimpleEmailTemplate } from "./emailTemplates";
+import { lucasEmailTemplate, userEmailTemplate } from "./emailTemplates";
 
+const myEmail = process.env.MY_EMAIL ?? ''
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+export async function POST(req: NextRequest) {
+  const body = await req.json()
+
   try {
-    const data = await resend.emails.send({
+    const { email, subject, message } = body
+
+    if (!email || !subject || !message) {
+      throw new Error('')
+    }
+
+    const emailSendResponse = await resend.emails.send({
       from: 'Lucas <lucas@munhoz.tech>',
-      to: ['lucasmunhozarruda@gmail.com'],
-      subject: 'Contact E-mail',
-      react: ReactEmailTemplate({ firstName: 'Lucas' }),
-      html: SimpleEmailTemplate({ firstName: 'Lucas' })
+      to: [myEmail],
+      subject: `Protfolio: ${subject}`,
+      html: lucasEmailTemplate({ email, subject, message })
     });
 
-    return NextResponse.json(data);
+    // IF RESEND FAILS
+    if (emailSendResponse.error) {
+      throw new Error('')
+    }
+
+    const { data } = await resend.emails.get(emailSendResponse.data?.id ?? '')
+
+    // // IF EMAILS BOUNCE
+    if(data?.last_event == 'bounced') {
+      throw new Error('')
+    }
+
+    await resend.emails.send({
+      from: 'Lucas <lucas@munhoz.tech>',
+      to: [email],
+      subject: `Email successfully sent to Lucas.`,
+      html: userEmailTemplate()
+    });
+
+    return NextResponse.json({}, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ error });
+    return NextResponse.json({}, { status: 400 });
   }
 }

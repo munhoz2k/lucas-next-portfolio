@@ -1,10 +1,50 @@
 'use client'
 
+import axios from 'axios'
 import Link from 'next/link'
-import React from 'react'
+import { useState } from 'react'
+import { toast } from 'sonner'
+
 import { GithubLogo, LinkedinLogo } from 'phosphor-react'
 
+interface FormInputs extends HTMLFormControlsCollection {
+  email: HTMLInputElement
+  subject: HTMLInputElement
+  message: HTMLTextAreaElement
+}
+
+interface EmailFormElement extends HTMLFormElement {
+  readonly elements: FormInputs
+}
+
 export default function EmailSection() {
+  const [isFetchingEmail, setIsFetchingEmail] = useState(false)
+
+  async function handleSubmit(e: React.FormEvent<EmailFormElement>) {
+    setIsFetchingEmail(true)
+    e.preventDefault()
+
+    const formData = {
+      email: e.currentTarget.elements.email.value,
+      subject: e.currentTarget.elements.subject.value,
+      message: e.currentTarget.elements.message.value
+    }
+
+    try {
+      await axios.post('/api/sendmail', {
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      })
+
+      toast.success('E-mail has been sent successfully!')
+    } catch (error) {
+      toast.error('Failed to send the e-mail!')
+    }
+
+    setIsFetchingEmail(false)
+  }
+  
   return (
     <section className='grid max-sm:p-0 md:grid-cols-2 gap-4 mb-12 mt-48 py-24 px-4'>
       <div>
@@ -62,6 +102,7 @@ export default function EmailSection() {
       <div className='mt-10 md:mt-0'>
         <form
           className='flex flex-col space-y-6 [&>div]:flex [&>div]:flex-col [&>div_label]:mb-1'  
+          onSubmit={handleSubmit}
         >
           <div>
             <label
@@ -78,14 +119,14 @@ export default function EmailSection() {
               type="email"
               id="email"
               required
-            />
+              />
           </div>
 
           <div>
             <label
               className='text-lg text-black font-medium ml-1'
               htmlFor="email"
-            >
+              >
               Subject
             </label>
             <input
@@ -96,14 +137,14 @@ export default function EmailSection() {
               type="text"
               id="subject"
               required
-            />
+              />
           </div>
 
           <div>
             <label
               className='text-lg text-black font-medium ml-1'
               htmlFor="message"
-            >
+              >
               Message
             </label>
             <textarea
@@ -114,15 +155,17 @@ export default function EmailSection() {
               placeholder="Hi, how are you? My name is John Doe..."
               id="message"
               required
-            />
+              />
           </div>
 
           <button
             className='py-2 w-full bg-brand-color text-light-shades text-lg font-medium rounded-xl
-            outline-none shadow-md hover:shadow-xl hover:shadow-brand-color/60 hover:-translate-y-1
-            transition-all duration-300'
+            outline-1 shadow-md enabled:hover:shadow-xl enabled:hover:shadow-brand-color/60
+            enabled:hover:-translate-y-1 transition-all duration-300
+            disabled:brightness-75 disabled:cursor-not-allowed'
             type='submit'
-          >
+            disabled={isFetchingEmail}
+            >
             Send Email
           </button>
         </form>
