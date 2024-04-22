@@ -1,0 +1,45 @@
+{
+  "navBar": {
+    "aboutLink": "About",
+    "skillsLink": "Skills",
+    "projectsLink": "Projects",
+    "contactLink": "Contact"
+  },
+  "hero": {
+    "helloTitle": "Hi, I'm...",
+    "myJob": "Front-end Developer",
+    "introText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, omnis ex explicabo aperiam consectetur quis ad consequatur sequi maxime nobis excepturi sint magni velit neque itaque distinctio, cum quisquam praesentium.",
+    "hireButton": "Hire me",
+    "CVbutton": "Download CV"
+  },
+  "aboutMe": {
+    "title": "About Me",
+    "aboutText": "Passionate about web development, how software works and is made, and also passionate about music. In 2020 I was still wondering myself what I would do for living, it was at that time I learned how softwares were made. I decide to specialize in web development at the end of 2021 learning HTML, CSS, JavaScript and following the banck-end specialization path using Express, TypeScript and NodeJS. And today I'm working creating web pages with React and NextJS."
+  },
+  "skills": {
+    "title": "My Skills"
+  },
+  "projects": {
+    "title": "My Projects",
+    "ignitersDesc": "NextJS t-shirt e-commerce, integrated with Stripe payment API",
+    "pizzaShopDesc": "React page for restaurants delivery management, allowing the restaurant to list and control the orders",
+    "githubBlogDesc": "React blog to visualize all your GitHub issues, integrated with GitHub API",
+    "santoCafeDesc": "React page for coffe delivery",
+    "dtMoneyDesc": "React page for personal finance management, allowing users to track their expenses"
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "text": "I'm currently looking for new opportunities, my email is always open. If you have any questions or would like to connect, I'll do my best to respond as soon as possible!",
+    "emailLabel": "Your email",
+    "subjectLabel": "Subject",
+    "subjectPlaceHolder": "Let's talk about...",
+    "messageLabel": "Message",
+    "messageTextArea": "Hi, how are you? My name is John Doe...",
+    "sendButton": "Send Email"
+  },
+  "footer": {
+    "madeBy": "Made By Lucas Munhoz",
+    "thanksText": "Thanks everybody for your attention to my portfolio!",
+    "rightsText": "All rights reserved"
+  }
+}

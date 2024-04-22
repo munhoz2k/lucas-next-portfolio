@@ -1,66 +1,83 @@
 import React from 'react'
 import ProjectCard from './ProjectCard'
 
-const projectsData = [
-  {
-    title: "Igniters",
-    description: "NextJS t-shirt e-commerce, integrated with Stripe payment API",
-    image: '/images/projects/igniters-page.png',
-    github: 'https://github.com/munhoz2k/igniters',
-    host: {
-      online: true,
-      pageUrl: 'https://igniters.vercel.app/'
-    }
-  },
-  {
-    title: "Pizza Shop",
-    description: "React page for restaurants delivery management",
-    image: '/images/projects/pizza-shop-page.png',
-    github: 'https://github.com/munhoz2k/pizza-shop',
-    host: {
-      online: false,
-      pageUrl: ''
-    }
-  },
-  {
-    title: "Github Blog",
-    description: "React blog to visualize all your GitHub issues, integrated with GitHub API",
-    image: '/images/projects/github-blog.png',
-    github: 'https://github.com/munhoz2k/github-blog',
-    host: {
-      online: false,
-      pageUrl: ''
-    }
-  },
-  {
-    title: "Santo Cafe",
-    description: "React page for coffe delivery",
-    image: '/images/projects/santo-cafe-page.png',
-    github: 'https://github.com/munhoz2k/santo-cafe',
-    host: {
-      online: false,
-      pageUrl: ''
-    }
-  },
-  {
-    title: "DT Money",
-    description: "React page for restaurants delivery management",
-    image: '/images/projects/dt-money-page.png',
-    github: 'https://github.com/munhoz2k/dt-money',
-    host: {
-      online: false,
-      pageUrl: ''
-    }
-  },
-]
+interface ProjectsSectionProps {
+  title: string
+  ignitersDesc: string
+  pizzaShopDesc: string
+  githubBlogDesc: string
+  santoCafeDesc: string
+  dtMoneyDesc: string
+}
 
-export default function ProjectsSection() {
+export default function ProjectsSection({
+  title,
+  ignitersDesc,
+  pizzaShopDesc,
+  githubBlogDesc,
+  santoCafeDesc,
+  dtMoneyDesc
+}: ProjectsSectionProps) {
+
+  const projectsData = [
+    {
+      title: "Igniters",
+      description: ignitersDesc,
+      image: '/images/projects/igniters-page.png',
+      github: 'https://github.com/munhoz2k/igniters',
+      host: {
+        online: true,
+        pageUrl: 'https://igniters.vercel.app/'
+      }
+    },
+    {
+      title: "Pizza Shop",
+      description: pizzaShopDesc,
+      image: '/images/projects/pizza-shop-page.png',
+      github: 'https://github.com/munhoz2k/pizza-shop',
+      host: {
+        online: false,
+        pageUrl: ''
+      }
+    },
+    {
+      title: "Github Blog",
+      description: githubBlogDesc,
+      image: '/images/projects/github-blog.png',
+      github: 'https://github.com/munhoz2k/github-blog',
+      host: {
+        online: false,
+        pageUrl: ''
+      }
+    },
+    {
+      title: "Santo Cafe",
+      description: santoCafeDesc,
+      image: '/images/projects/santo-cafe-page.png',
+      github: 'https://github.com/munhoz2k/santo-cafe',
+      host: {
+        online: false,
+        pageUrl: ''
+      }
+    },
+    {
+      title: "DT Money",
+      description: dtMoneyDesc,
+      image: '/images/projects/dt-money-page.png',
+      github: 'https://github.com/munhoz2k/dt-money',
+      host: {
+        online: false,
+        pageUrl: ''
+      }
+    },
+  ]
+
   return (
     <div className='mt-48'>
       <h1
         className='mb-16 text-center font-bold text-4xl text-black'
       >
-        My Projects
+        {title}
       </h1>
 
       <div

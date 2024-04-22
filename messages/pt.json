@@ -1,0 +1,45 @@
+{
+  "navBar": {
+    "aboutLink": "Sobre",
+    "skillsLink": "Habilidades",
+    "projectsLink": "Projetos",
+    "contactLink": "Contato"
+  }, 
+  "hero": {
+    "helloTitle": "Olá, Eu sou...",
+    "myJob": "Desenvolvedor Front-end",
+    "introText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, omnis ex explicabo aperiam consectetur quis ad consequatur sequi maxime nobis excepturi sint magni velit neque itaque distinctio, cum quisquam praesentium.",
+    "hireButton": "Me contrate",
+    "CVbutton": "Baixar currículo"
+  },
+  "aboutMe": {
+    "title": "Sobre Mim",
+    "aboutText": "Apaixonado por desenvolvimento web, como os softwares funcionam e são feitos e também apaixonado por música. Em 2020, ainda estava me perguntando o que faria para viver, foi nesse momento que aprendi como os softwares eram feitos. Decidi me especializar em desenvolvimento web no final de 2021, aprendendo HTML, CSS, JavaScript e seguindo o caminho de especialização em backend usando Express, TypeScript e NodeJS. E hoje em dia estou trabalhando criando páginas web com React e NextJS."
+  },
+  "skills": {
+    "title": "Minhas Habilidades"
+  },
+  "projects": {
+    "title": "Meus Projetos",
+    "ignitersDesc": "E-commerce de camisetas feito com NextJS, integrado com a API de pagamento Stripe",
+    "pizzaShopDesc": "Página web em React para gestão de entregas do restaurantes, permitindo listagem e controle dos pedidos",
+    "githubBlogDesc": "Blog em React para visualizar todos os seus Issues do GitHub, integrado com a API do GitHub",
+    "santoCafeDesc": "Página web em React para entregas de café",
+    "dtMoneyDesc": "Página web em React para gerenciamento de finanças pessoais, permitindo aos usuários acompanhar seus gastos"
+  },
+  "contact": {
+    "title": "Vamos nos conectar",
+    "text": "Atualmente estou em busca de novas oportunidades, meu email está sempre aberto para todos. Se você tem alguma pergunta ou quiser se conectar, farei o meu melhor para responder o mais rápido possível!",
+    "emailLabel": "Seu email",
+    "subjectLabel": "Assunto",
+    "subjectPlaceHolder": "Vamos falar sobre...",
+    "messageLabel": "Mensagem",
+    "messageTextArea": "Olá, tudo bem? Meu nome é John Doe...",
+    "sendButton": "Enviar Email"
+  },
+  "footer": {
+    "madeBy": "Feito por Lucas Munhoz",
+    "thanksText": "Obrigado a todos pela atenção ao meu portfólio!",
+    "rightsText": "Todos direito reservados"
+  }
+}

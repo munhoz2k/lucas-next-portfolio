@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { toast } from 'sonner'
 
 import { GithubLogo, LinkedinLogo } from 'phosphor-react'
+import { text } from 'stream/consumers'
 
 interface FormInputs extends HTMLFormControlsCollection {
   email: HTMLInputElement
@@ -17,7 +18,27 @@ interface EmailFormElement extends HTMLFormElement {
   readonly elements: FormInputs
 }
 
-export default function EmailSection() {
+interface EmailSectionProps {
+  title: string
+  text: string
+  emailLabel: string
+  subjectLabel: string
+  subjectPlaceHolder: string
+  messageLabel: string
+  messageTextArea: string
+  sendButton: string
+}
+
+export default function EmailSection({
+  title,
+  text,
+  emailLabel,
+  subjectLabel,
+  subjectPlaceHolder,
+  messageLabel,
+  messageTextArea,
+  sendButton
+}: EmailSectionProps) {
   const [isFetchingEmail, setIsFetchingEmail] = useState(false)
 
   async function handleSubmit(e: React.FormEvent<EmailFormElement>) {
@@ -49,13 +70,11 @@ export default function EmailSection() {
     <section className='grid max-sm:p-0 md:grid-cols-2 gap-4 mb-12 mt-48 py-24 px-4'>
       <div>
         <h5 className='text-xl text-black font-bold my-2'>
-          Let's Connect
+          {title}
         </h5>
 
         <p className='text-dark-shades mb-4 max-w-md'>
-          I'm currently looking for new oportunities, my inbox is always open.
-          Whether you have a question or just want to say hi, i'll try my best
-          to get back to you!
+          {text}
         </p>
 
         <div className='flex gap-8 mt-10 max-[390px]:flex-col'>
@@ -109,7 +128,7 @@ export default function EmailSection() {
               className='text-lg text-black font-medium ml-1'
               htmlFor="email"
             >
-              Your email
+              {emailLabel}
             </label>
             <input
               className='px-4 py-2 outline-none duration-300 rounded-xl shadow-md bg-zinc-200 
@@ -127,13 +146,13 @@ export default function EmailSection() {
               className='text-lg text-black font-medium ml-1'
               htmlFor="email"
               >
-              Subject
+              {subjectLabel}
             </label>
             <input
               className='px-4 py-2 outline-none duration-300 rounded-xl shadow-md bg-zinc-200 
               text-black/80 ring-1 ring-zinc-400 placeholder:text-black placeholder:opacity-50
               focus:ring-2 focus:ring-brand-color focus:shadow-lg focus:shadow-brand-color'
-              placeholder="Let's talk about..."
+              placeholder={subjectPlaceHolder}
               type="text"
               id="subject"
               required
@@ -145,14 +164,14 @@ export default function EmailSection() {
               className='text-lg text-black font-medium ml-1'
               htmlFor="message"
               >
-              Message
+              {messageLabel}
             </label>
             <textarea
               className='px-4 py-2 h-16 resize-none outline-none rounded-xl shadow-md bg-zinc-200
               text-black/80 ring-1 ring-zinc-400 placeholder:text-black placeholder:opacity-50
               focus:ring-2 focus:ring-brand-color focus:shadow-lg focus:shadow-brand-color
               transition-shadow duration-300 overflow-auto'
-              placeholder="Hi, how are you? My name is John Doe..."
+              placeholder={messageTextArea}
               id="message"
               required
               />
@@ -166,7 +185,7 @@ export default function EmailSection() {
             type='submit'
             disabled={isFetchingEmail}
             >
-            Send Email
+            {sendButton}
           </button>
         </form>
       </div>

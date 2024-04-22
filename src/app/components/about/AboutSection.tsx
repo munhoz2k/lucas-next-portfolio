@@ -1,11 +1,15 @@
 'use client'
-
 import Image from 'next/image'
 import React from 'react'
 
 import ilustration from '/public/images/ilustration-about-me.png'
 
-export default function AboutSection() {
+interface AboutSectionProps {
+  title: string
+  aboutText: string
+}
+
+export default function AboutSection({ title, aboutText }: AboutSectionProps) {
   return (
     <section className='text-dark-shades lg:-translate-x-10'>
       <div
@@ -21,16 +25,11 @@ export default function AboutSection() {
 
         <div>
           <h1 className='mb-4 text-4xl font-bold text-black'>
-            About Me
+            {title}
           </h1>
 
           <p className='text-base lg:text-lg'>
-            Passionate about web development, programming, softwares, how software works,
-            how it is made and also passionate about games. In 2020 I was still wondering
-            myself what I would do for living, it was at that time I learned how softwares
-            were made. I decide to specialize in web development at the end of 2021 learning HTML,
-            CSS, JavaScript and following the banck-end specialization path using Express,
-            TypeScript and NodeJS. And today I'm working creating web pages with React and NextJS.
+            {aboutText}
           </p>
         </div>
       </div>

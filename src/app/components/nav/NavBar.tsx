@@ -1,33 +1,41 @@
 'use client'
-
 import Link from "next/link";
 import { useState } from "react";
-import { Code, List, X } from "phosphor-react";
 
 import NavLink, { NavLinkProps } from "./NavLink";
 import MenuOverlay from "./MenuOverlay";
+import CustomLanguageSelector from "./CustomLanguageSelector";
 
-const navLinks: NavLinkProps[] = [
-  {
-    title: 'About',
-    href: '#about-me'
-  },
-  {
-    title: 'Skills',
-    href: '#my-skills'
-  },
-  {
-    title: 'Projects',
-    href: '#my-projects'
-  },
-  {
-    title: 'Contact',
-    href: '#contact'
-  },
-]
+import { Code, List, X } from "phosphor-react";
 
-export default function NavBar() {
+interface NavBarProps {
+  aboutLink: string
+  skillsLink: string
+  projectsLink: string
+  contactLink: string
+}
+
+export default function NavBar({ aboutLink, skillsLink, projectsLink, contactLink }: NavBarProps) {
   const [navBarOpen, setNavBarOpen] = useState(false)
+  
+  const navLinks: NavLinkProps[] = [
+    {
+      title: aboutLink,
+      href: '#about-me'
+    },
+    {
+      title: skillsLink,
+      href: '#my-skills'
+    },
+    {
+      title: projectsLink,
+      href: '#my-projects'
+    },
+    {
+      title: contactLink,
+      href: '#contact'
+    },
+  ]
 
   return (
     <nav className='fixed top-0 left-0 right-0 z-10 bg-zinc-800/80'>
@@ -39,36 +47,43 @@ export default function NavBar() {
           <Code className="size-12 " />
         </Link>
 
-        <div className='block md:hidden' id='mobile-menu'>
-          {navBarOpen ? (
-            <button
-              onClick={() => setNavBarOpen(false)}
-              className='flex items-center px-3 py-2 text-light-shades rounded border-2 border-light-shades
-              hover:text-brand-color hover:border-brand-color'
-            >
-              <X className='h-5 w-5' weight='bold' />
-            </button>
-          ) : (
-            <button
-            onClick={() => setNavBarOpen(true)}
-            className='flex items-center px-3 py-2 text-light-shades rounded border-2 border-light-shades
-              hover:text-brand-color hover:border-brand-color'
-            >
-              <List className='h-5 w-5' weight='bold' />
-            </button>
-          )}
-        </div>
+        <div className="flex gap-4 md:gap-10">
+          <CustomLanguageSelector />
 
-        <div className='hidden md:block md:w-auto' id='menu'>
-          <ul className='flex flex-row space-x-8'>
-            {navLinks.map((link, index) => {
-              return (
-                <li key={index}>
-                  <NavLink href={link.href} title={link.title} />
-                </li>
-              )
-            })}
-          </ul>
+          <div className='block md:hidden' id='mobile-menu'>
+            {navBarOpen ? (
+              <button
+                onClick={() => setNavBarOpen(false)}
+                className='flex items-center px-3 py-2 text-light-shades rounded border-2 border-light-shades
+                hover:text-brand-color hover:border-brand-color'
+              >
+                <X className='h-5 w-5' weight='bold' />
+              </button>
+            ) : (
+              <button
+              onClick={() => setNavBarOpen(true)}
+              className='flex items-center px-3 py-2 text-light-shades rounded border-2 border-light-shades
+                hover:text-brand-color hover:border-brand-color'
+              >
+                <List className='h-5 w-5' weight='bold' />
+              </button>
+            )}
+          </div>
+
+          <div
+            className='hidden md:flex md:w-auto items-center'
+            id='menu'
+          >
+            <ul className='flex flex-row space-x-8'>
+              {navLinks.map((link, index) => {
+                return (
+                  <li key={index}>
+                    <NavLink href={link.href} title={link.title} />
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
         </div>
       </div>
 

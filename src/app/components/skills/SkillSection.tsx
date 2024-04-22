@@ -7,11 +7,15 @@ import { RiHtml5Fill, RiJavascriptLine, RiReactjsLine } from 'react-icons/ri'
 import { SiStyledcomponents, SiTailwindcss } from 'react-icons/si'
 import { TbBrandNextjs, TbBrandTypescript } from 'react-icons/tb'
 
-export default function SkillSection() {
+interface SkillSectionProps {
+  title: string
+}
+
+export default function SkillSection({ title }: SkillSectionProps) {
   return (
     <section className='mt-52'>
       <h2 className='mb-12 text-4xl font-bold text-black text-center'>
-        My Skills
+        {title}
       </h2>
 
       <div className='grid grid-cols-2 gap-8 max-w-[1080px] md:grid-cols-4 mx-auto'>
