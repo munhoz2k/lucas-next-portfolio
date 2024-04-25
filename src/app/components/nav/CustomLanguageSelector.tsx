@@ -1,3 +1,4 @@
+'use client'
 import { MouseEvent, useState, useTransition } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Locales, locales } from "@/locales";
@@ -31,9 +32,9 @@ export default function CustomLanguageSelector() {
     <div className="relative">
       <button
         className="flex h-full items-center pr-8 py-1 px-4 cursor-pointer bg-zinc-500 text-light-shades rounded-lg
-        hover:bg-zinc-500/40 hover:shadow-lg"
-        onClick={() => handleOpenClose()}
+        hover:bg-zinc-500/40 hover:shadow-lg disabled:brightness-75 disabled:cursor-not-allowed"
         disabled={isPending}
+        onClick={() => handleOpenClose()}
       >
         <span>{locales[locale]}</span>
         <CaretDown

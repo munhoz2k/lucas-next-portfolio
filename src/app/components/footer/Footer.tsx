@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { Code } from '@phosphor-icons/react/dist/ssr'
-import React from 'react'
 
 interface FooterProps {
   madeBy: string
