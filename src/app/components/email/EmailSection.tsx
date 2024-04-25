@@ -1,12 +1,12 @@
 'use client'
 
-import axios from 'axios'
 import Link from 'next/link'
+import axios from 'axios'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { toast } from 'sonner'
 
 import { GithubLogo, LinkedinLogo } from 'phosphor-react'
-import { text } from 'stream/consumers'
 
 interface FormInputs extends HTMLFormControlsCollection {
   email: HTMLInputElement
@@ -67,7 +67,13 @@ export default function EmailSection({
   }
   
   return (
-    <section className='grid max-sm:p-0 md:grid-cols-2 gap-4 mb-12 mt-48 py-24 px-4'>
+    <motion.section
+      initial={{ x: -200, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true, amount: .7 }}
+      className='grid max-sm:p-0 md:grid-cols-2 gap-4 mb-12 mt-48 py-24 px-4'
+    >
       <div>
         <h5 className='text-xl text-black font-bold my-2'>
           {title}
@@ -189,6 +195,6 @@ export default function EmailSection({
           </button>
         </form>
       </div>
-    </section>
+    </motion.section>
   )
 }

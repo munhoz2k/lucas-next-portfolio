@@ -1,6 +1,7 @@
-'use client'
 import Image from 'next/image'
-import { TypeAnimation } from 'react-type-animation'
+
+import TypeWritter from './TypeWritter'
+import { MotionSection } from '../motion/MotionSection'
 
 import ilustration from '/public/images/ilustration-intro.png'
 
@@ -14,7 +15,13 @@ interface HeroSectionProps {
 
 export default function HeroSection({ helloTitle, myJob, introText, hireButton, CVbutton }: HeroSectionProps) {
   return (
-    <section className='max-md:mt-12 md:translate-x-12'>
+    <MotionSection
+      initial={{ x: -200, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1, }} 
+      transition={{ duration: 1 }}
+      viewport={{ once: true, amount: 'all' }}
+      className='max-md:mt-12 md:translate-x-12'
+    >
       <div className='grid grid-cols-1 md:grid-cols-12'>
         <div className='col-span-7 place-self-center'>
           <h1 className='mb-4 text-center md:text-left font-extrabold'>
@@ -25,18 +32,7 @@ export default function HeroSection({ helloTitle, myJob, introText, hireButton, 
               {helloTitle}
             </span>
 
-            <TypeAnimation
-              className='text-3xl md:text-4xl lg:text-5xl text-black'
-              sequence={[
-                'Lucas Munhoz',
-                1000,
-                myJob,
-                1000,
-              ]}
-              wrapper="div"
-              speed={50}
-              repeat={Infinity}
-            />
+            <TypeWritter myJob={myJob} />
           </h1>
 
           <p className='text-dark-shades text-base md:text-lg lg:text-xl font-light mb-8'>
@@ -74,6 +70,6 @@ export default function HeroSection({ helloTitle, myJob, introText, hireButton, 
           />
         </div>
       </div>
-    </section>
+    </MotionSection>
   )
 }

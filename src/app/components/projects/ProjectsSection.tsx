@@ -1,5 +1,6 @@
 import React from 'react'
 import ProjectCard from './ProjectCard'
+import { MotionSection } from '../motion/MotionSection'
 
 interface ProjectsSectionProps {
   title: string
@@ -73,7 +74,13 @@ export default function ProjectsSection({
   ]
 
   return (
-    <div className='mt-48'>
+    <MotionSection
+      initial={{ x: -200, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true, amount: .2 }}
+      className='mt-48'
+    >
       <h1
         className='mb-16 text-center font-bold text-4xl text-black'
       >
@@ -96,6 +103,6 @@ export default function ProjectsSection({
           )
         })}
       </div>
-    </div>
+    </MotionSection>
   )
 }

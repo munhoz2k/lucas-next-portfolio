@@ -1,6 +1,7 @@
 'use client'
 import Link from "next/link";
 import { useState } from "react";
+import { motion } from "framer-motion"
 
 import NavLink, { NavLinkProps } from "./NavLink";
 import MenuOverlay from "./MenuOverlay";
@@ -38,7 +39,12 @@ export default function NavBar({ aboutLink, skillsLink, projectsLink, contactLin
   ]
 
   return (
-    <nav className='fixed top-0 left-0 right-0 z-10 bg-zinc-800/80'>
+    <motion.nav
+      initial={{ y: '-100%', opacity: 0 }}
+      animate={{ y: '0%', opacity: 1, }} 
+      transition={{ duration: 1 }}
+      className='fixed top-0 left-0 right-0 z-10 bg-zinc-800/80'
+    >
       <div className='flex flex-wrap items-center justify-between px-6 md:px-12 lg:px-20 py-4'>
         <Link
           className='md:text-3xl text-2xl font-semibold text-light-shades hover:text-brand-color'
@@ -88,6 +94,6 @@ export default function NavBar({ aboutLink, skillsLink, projectsLink, contactLin
       </div>
 
       {navBarOpen ? <MenuOverlay links={navLinks} /> : null}
-    </nav>
+    </motion.nav>
   )
 }

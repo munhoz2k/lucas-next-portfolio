@@ -1,8 +1,8 @@
-'use client'
-import Image from 'next/image'
 import React from 'react'
+import Image from 'next/image'
 
 import ilustration from '/public/images/ilustration-about-me.png'
+import { MotionSection } from '../motion/MotionSection'
 
 interface AboutSectionProps {
   title: string
@@ -11,9 +11,15 @@ interface AboutSectionProps {
 
 export default function AboutSection({ title, aboutText }: AboutSectionProps) {
   return (
-    <section className='text-dark-shades lg:-translate-x-10'>
+    <MotionSection
+      initial={{ x: -200, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true, amount: .7 }}
+      className='text-dark-shades lg:-translate-x-10'
+    >
       <div
-        className='gap-10 items-center py-8 px-4 mt-20
+        className='gap-10 items-center py-8 px-4 mt-24
         md:grid md:grid-cols-2 xl:gap-16'
       >
         <Image
@@ -33,6 +39,6 @@ export default function AboutSection({ title, aboutText }: AboutSectionProps) {
           </p>
         </div>
       </div>
-    </section>
+    </MotionSection>
   )
 }

@@ -1,15 +1,23 @@
 import React from 'react'
 import Link from 'next/link'
+import { MotionDiv } from '../motion/MotionDiv'
 
 interface SkillIconProps {
   children: React.ReactNode
   redirectUrl: string
   description: string
+  animationDelay: number
 }
 
-export default function SkillIcon({ children, description, redirectUrl }: SkillIconProps) {
+export default function SkillIcon({ children, description, redirectUrl, animationDelay }: SkillIconProps) {
   return (
-    <div className='group relative'>
+    <MotionDiv
+      initial={{ y: -100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ delay: animationDelay, duration: .5 }}
+      viewport={{ once: true, amount: 'some' }}
+      className='group relative'
+    >
       <Link
         className='relative flex justify-center items-center h-[180px] lg:h-[232px] p-1 py-4
         transition-all duration-300 text-black rounded-3xl hover:shadow-xl hover:shadow-zinc-700
@@ -28,6 +36,6 @@ export default function SkillIcon({ children, description, redirectUrl }: SkillI
         {description}
       </span>
 
-    </div>
+    </MotionDiv>
   )
 }

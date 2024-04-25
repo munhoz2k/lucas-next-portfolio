@@ -1,8 +1,9 @@
-'use client'
-
-import Link from 'next/link'
-import { Code, Eye } from 'phosphor-react'
 import React from 'react'
+import Link from 'next/link'
+
+import { MotionDiv } from '../motion/MotionDiv'
+
+import { Code, Eye } from '@phosphor-icons/react/dist/ssr'
 
 interface ProjectCardProps {
   imgUrl: string
@@ -20,10 +21,16 @@ export default function ProjectCard({
   title,
   description,
   githubUrl,
-  host: { online, pageUrl }
+  host: { online, pageUrl },
 }: ProjectCardProps) {
   return (
-    <div className='rounded-b-2xl rounded-t-2xl bg-brand-color shadow-style-2'>
+    <MotionDiv
+      initial={{ x: -100, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ delay: .2, duration: 1 }}
+      viewport={{ once: true, amount: .5 }}
+      className='rounded-b-2xl rounded-t-2xl bg-brand-color shadow-style-2'
+    >
       <div
         className='relative group h-72 bg-no-repeat rounded-t-2xl 
         max-[540px]:h-40 lg:h-52 xl:h-72 2xl:h-80'
@@ -68,6 +75,6 @@ export default function ProjectCard({
           {description}
         </p>
       </div>
-    </div>
+    </MotionDiv>
   )
 }
