@@ -19,24 +19,33 @@ interface NavBarProps {
 export default function NavBar({ aboutLink, skillsLink, projectsLink, contactLink }: NavBarProps) {
   const [navBarOpen, setNavBarOpen] = useState(false)
   
-  const navLinks: NavLinkProps[] = [
+  const navLinks = [
     {
       title: aboutLink,
-      href: '#about-me'
+      id: 'about-section'
     },
     {
       title: skillsLink,
-      href: '#my-skills'
+      id: 'skills-section'
     },
     {
       title: projectsLink,
-      href: '#my-projects'
+      id: 'projects-section'
     },
     {
       title: contactLink,
-      href: '#contact'
+      id: 'email-section'
     },
   ]
+
+  function scrollIntoView(id: string) {
+    const section = document.getElementById(id)
+
+    if (section) {
+      const topOffset = section.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top: topOffset, behavior: 'smooth' })
+    }
+  }
 
   return (
     <motion.nav
@@ -83,8 +92,8 @@ export default function NavBar({ aboutLink, skillsLink, projectsLink, contactLin
             <ul className='flex flex-row space-x-8'>
               {navLinks.map((link, index) => {
                 return (
-                  <li key={index}>
-                    <NavLink href={link.href} title={link.title} />
+                  <li onClick={() => scrollIntoView(link.id)} key={index}>
+                    <NavLink title={link.title} />
                   </li>
                 )
               })}

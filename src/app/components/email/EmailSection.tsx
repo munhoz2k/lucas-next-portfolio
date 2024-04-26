@@ -73,6 +73,7 @@ export default function EmailSection({
       transition={{ duration: 1 }}
       viewport={{ once: true, amount: .7 }}
       className='grid max-sm:p-0 md:grid-cols-2 gap-4 mb-12 mt-48 py-24 px-4'
+      id='email-section'
     >
       <div>
         <h5 className='text-xl text-black font-bold my-2'>

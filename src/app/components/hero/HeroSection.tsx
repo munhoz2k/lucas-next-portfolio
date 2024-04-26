@@ -4,6 +4,7 @@ import TypeWritter from './TypeWritter'
 import { MotionSection } from '../motion/MotionSection'
 
 import ilustration from '/public/images/ilustration-intro.png'
+import Link from 'next/link'
 
 interface HeroSectionProps {
   helloTitle: string
@@ -19,8 +20,9 @@ export default function HeroSection({ helloTitle, myJob, introText, hireButton, 
       initial={{ x: -200, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1, }} 
       transition={{ duration: 1 }}
-      viewport={{ once: true, amount: 'all' }}
+      viewport={{ once: true }}
       className='max-md:mt-12 md:translate-x-12'
+      id='hero-section'
     >
       <div className='grid grid-cols-1 md:grid-cols-12'>
         <div className='col-span-7 place-self-center'>
@@ -40,14 +42,16 @@ export default function HeroSection({ helloTitle, myJob, introText, hireButton, 
           </p>
 
           <div className='max-md:space-y-4'>
-            <button
-              className='px-10 py-2 w-full bg-zinc-300 text-dark-shades text-lg
-              rounded-xl shadow-md ring-1 ring-zinc-400 outline-none hover:ring-2
-              hover:ring-brand-color hover:shadow-lg hover:shadow-brand-color hover:-translate-y-1
-              md:mr-4 md:w-fit lg:px-10 lg:text-2xl transition-all duration-300'
-            >
-              {hireButton}
-            </button>
+            <Link href='https://www.linkedin.com/in/lucas-munhoz-b946131a5/'>
+              <button
+                className='px-10 py-2 w-full bg-zinc-300 text-dark-shades text-lg
+                rounded-xl shadow-md ring-1 ring-zinc-400 outline-none hover:ring-2
+                hover:ring-brand-color hover:shadow-lg hover:shadow-brand-color hover:-translate-y-1
+                md:mr-4 md:w-fit lg:px-10 lg:text-2xl transition-all duration-300'
+              >
+                {hireButton}
+              </button>
+            </Link>
 
             <button
               className='px-10 py-2 w-full bg-brand-color text-light-shades text-lg

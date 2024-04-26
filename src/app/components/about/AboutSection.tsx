@@ -17,6 +17,7 @@ export default function AboutSection({ title, aboutText }: AboutSectionProps) {
       transition={{ duration: 1 }}
       viewport={{ once: true, amount: .7 }}
       className='text-dark-shades lg:-translate-x-10'
+      id='about-section'
     >
       <div
         className='gap-10 items-center py-8 px-4 mt-24

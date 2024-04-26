@@ -12,7 +12,52 @@ interface SkillSectionProps {
   title: string
 }
 
+
 export default function SkillSection({ title }: SkillSectionProps) {
+
+  const skills = [
+    {
+      description:'ReactJS',
+      redirectUrl:'https://react.dev/',
+      icon: <RiReactjsLine size={180} />
+    },
+    {
+      description:'NextJS',
+      redirectUrl:'https://nextjs.org/',
+      icon: <TbBrandNextjs size={180} />
+    },
+    {
+      description:'TypeScript',
+      redirectUrl:'https://www.typescriptlang.org/',
+      icon: <TbBrandTypescript size={180} />
+    },
+    {
+      description:'JavaScript',
+      redirectUrl:'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+      icon: <RiJavascriptLine size={200} />
+    },
+    {
+      description:'TailwindCSS',
+      redirectUrl:'https://tailwindcss.com/',
+      icon: <SiTailwindcss size={180} />
+    },
+    {
+      description:'Styled Components',
+      redirectUrl:'https://styled-components.com/',
+      icon: <SiStyledcomponents size={180} />
+    },
+    {
+      description:'HTML5',
+      redirectUrl:'https://developer.mozilla.org/pt-BR/docs/Web/HTML',
+      icon: <RiHtml5Fill size={180} />
+    },
+    {
+      description:'CSS3',
+      redirectUrl:'https://developer.mozilla.org/pt-BR/docs/Web/CSS',
+      icon: <DiCss3 size={180} />
+    }
+  ]
+
   return (
     <MotionSection
       initial={{ x: -200, opacity: 0 }}
@@ -20,76 +65,25 @@ export default function SkillSection({ title }: SkillSectionProps) {
       transition={{ duration: 1 }}
       viewport={{ once: true, amount: .7 }}
       className='mt-52'
+      id='skills-section'
     >
       <h2 className='mb-12 text-4xl font-bold text-black text-center'>
         {title}
       </h2>
 
       <div className='grid grid-cols-2 gap-8 max-w-[1080px] md:grid-cols-4 mx-auto'>
-
-        <SkillIcon
-          description='ReactJS'
-          redirectUrl='https://react.dev/'
-          animationDelay={0.8}
-        >
-          <RiReactjsLine size={180} />
-        </SkillIcon>
-
-        <SkillIcon
-          description='NextJS'
-          redirectUrl='https://nextjs.org/'
-          animationDelay={1}
-        >
-          <TbBrandNextjs size={180} />
-        </SkillIcon>
-
-        <SkillIcon
-          description='TypeScript'
-          redirectUrl='https://www.typescriptlang.org/'
-          animationDelay={1.2}
-        >
-          <TbBrandTypescript size={180} />
-        </SkillIcon>
-
-        <SkillIcon
-          description='JavaScript'
-          redirectUrl='https://developer.mozilla.org/en-US/docs/Web/JavaScript'
-          animationDelay={1.4}
-        >
-          <RiJavascriptLine size={200} />
-        </SkillIcon>
-
-        <SkillIcon
-          description='TailwindCSS'
-          redirectUrl='https://tailwindcss.com/'
-          animationDelay={1.6}
-        >
-          <SiTailwindcss size={180} />
-        </SkillIcon>
-
-        <SkillIcon
-          description='Styled Components'
-          redirectUrl='https://styled-components.com/'
-          animationDelay={1.8}
-        >
-          <SiStyledcomponents size={180} />
-        </SkillIcon>
-
-        <SkillIcon
-          description='HTML5'
-          redirectUrl='https://developer.mozilla.org/pt-BR/docs/Web/HTML'
-          animationDelay={2}
-        >
-          <RiHtml5Fill size={180} />
-        </SkillIcon>
-
-        <SkillIcon
-          description='CSS3'
-          redirectUrl='https://developer.mozilla.org/pt-BR/docs/Web/CSS'
-          animationDelay={2.2}
-        >
-          <DiCss3 size={180} />
-        </SkillIcon>
+        {skills.map((skill, i) => {
+          return (
+            <SkillIcon
+              key={skill.description}
+              description={skill.description}
+              redirectUrl={skill.redirectUrl}
+              animationDelay={0.8 + (0.2 * i)}
+            >
+              {skill.icon}
+            </SkillIcon>
+          )
+        })}
       </div>
     </MotionSection>
   )

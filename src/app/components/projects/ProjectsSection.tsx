@@ -80,6 +80,7 @@ export default function ProjectsSection({
       transition={{ duration: 1 }}
       viewport={{ once: true, amount: .2 }}
       className='mt-48'
+      id='projects-section'
     >
       <h1
         className='mb-16 text-center font-bold text-4xl text-black'
