@@ -15,7 +15,7 @@ export default function AboutSection({ title, aboutText }: AboutSectionProps) {
       initial={{ x: -200, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ duration: 1 }}
-      viewport={{ once: true, amount: .7 }}
+      viewport={{ once: true, amount: .3 }}
       className='text-dark-shades lg:-translate-x-10'
       id='about-section'
     >

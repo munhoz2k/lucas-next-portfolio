@@ -71,7 +71,7 @@ export default function EmailSection({
       initial={{ x: -200, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ duration: 1 }}
-      viewport={{ once: true, amount: .7 }}
+      viewport={{ once: true, amount: .3 }}
       className='grid max-sm:p-0 md:grid-cols-2 gap-4 mb-12 mt-48 py-24 px-4'
       id='email-section'
     >
