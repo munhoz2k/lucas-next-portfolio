@@ -8,13 +8,13 @@
   "hero": {
     "helloTitle": "Olá, Eu sou...",
     "myJob": "Desenvolvedor Front-end",
-    "introText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, omnis ex explicabo aperiam consectetur quis ad consequatur sequi maxime nobis excepturi sint magni velit neque itaque distinctio, cum quisquam praesentium.",
-    "hireButton": "Me contrate",
+    "introText": "Desenvolvedor web desde 2021, com foco em produtos digitais modernos, performáticos e com alta responsividade, sempre me dedicando para o melhor resultado e parceria com a sua empresa ou vida profissional, entre em contato comigo e faça parte dessa experiência.",
+    "hireButton": "Conectar",
     "CVbutton": "Baixar currículo"
   },
   "aboutMe": {
     "title": "Sobre Mim",
-    "aboutText": "Apaixonado por desenvolvimento web, como os softwares funcionam e são feitos e também apaixonado por música. Em 2020, ainda estava me perguntando o que faria para viver, foi nesse momento que aprendi como os softwares eram feitos. Decidi me especializar em desenvolvimento web no final de 2021, aprendendo HTML, CSS, JavaScript e seguindo o caminho de especialização em backend usando Express, TypeScript e NodeJS. E hoje em dia estou trabalhando criando páginas web com React e NextJS."
+    "aboutText": "Sou um jovem de 22 anos apaixonado por tecnologia, desenvolvimento web, música e insvestimentos. Iniciei meus estudos em programação em 2020 e desde então me encantei pela área de tecnologia. Encontrei minha área de especialização em desenvolvimento web no final de 2021, onde iniciei meu caminho seguindo o desenvolvimento back-end e posteriormente o desenvolvimento front-end. Hoje trabalho criando páginas web inovadoras, ajudando no aprimoramento da sua empresa e seu profissional."
   },
   "skills": {
     "title": "Minhas Habilidades"
@@ -29,7 +29,7 @@
   },
   "contact": {
     "title": "Vamos nos conectar",
-    "text": "Atualmente estou em busca de novas oportunidades, meu email está sempre aberto para todos. Se você tem alguma pergunta ou quiser se conectar, farei o meu melhor para responder o mais rápido possível!",
+    "text": "Meu email está sempre aberto para todos. Se você precisar da minha ajuda, quiser se conectar ou me mandar alguma sugestão, me mande um email por aqui, farei o meu melhor para responder o mais rápido possível!",
     "emailLabel": "Seu email",
     "subjectLabel": "Assunto",
     "subjectPlaceHolder": "Vamos falar sobre...",
