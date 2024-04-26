@@ -1,18 +1,26 @@
 import NavLink, { NavLinkProps } from "./NavLink"
 
-interface MenuOverlayProsp {
-  links: NavLinkProps[]
+interface MenuOverlayProps {
+  links: {
+    title: string
+    id: string
+  }[]
+  scrollIntoView: (id: string) => void
 }
 
-export default function MenuOverlay({ links }: MenuOverlayProsp) {
+export default function MenuOverlay({ links, scrollIntoView }: MenuOverlayProps) {
   return (
     <ul
       className='flex flex-col items-center pb-4 md:hidden'
     >
       {links.map((link, index) => {
         return (
-          <li className='flex' key={index}>
-            <NavLink href={link.href} title={link.title} />
+          <li
+            className='flex'
+            key={index}
+            onClick={() => scrollIntoView(link.id)}
+          >
+            <NavLink title={link.title} />
           </li>
         )
       })}

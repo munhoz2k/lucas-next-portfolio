@@ -45,6 +45,8 @@ export default function NavBar({ aboutLink, skillsLink, projectsLink, contactLin
       const topOffset = section.getBoundingClientRect().top + window.scrollY - 100;
       window.scrollTo({ top: topOffset, behavior: 'smooth' })
     }
+
+    setNavBarOpen(false)
   }
 
   return (
@@ -102,7 +104,7 @@ export default function NavBar({ aboutLink, skillsLink, projectsLink, contactLin
         </div>
       </div>
 
-      {navBarOpen ? <MenuOverlay links={navLinks} /> : null}
+      {navBarOpen ? <MenuOverlay links={navLinks} scrollIntoView={scrollIntoView} /> : null}
     </motion.nav>
   )
 }
