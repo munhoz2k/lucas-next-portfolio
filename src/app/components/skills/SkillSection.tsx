@@ -63,7 +63,7 @@ export default function SkillSection({ title }: SkillSectionProps) {
       initial={{ x: -200, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ duration: 1 }}
-      viewport={{ once: true, amount: .3 }}
+      viewport={{ once: true, amount: .2 }}
       className='mt-52'
       id='skills-section'
     >
@@ -78,7 +78,7 @@ export default function SkillSection({ title }: SkillSectionProps) {
               key={skill.description}
               description={skill.description}
               redirectUrl={skill.redirectUrl}
-              animationDelay={0.8 + (0.2 * i)}
+              animationDelay={1.2 + (0.2 * i)}
             >
               {skill.icon}
             </SkillIcon>

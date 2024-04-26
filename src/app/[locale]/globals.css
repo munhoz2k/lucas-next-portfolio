@@ -41,6 +41,8 @@ body {
   100% { transform: translateY(0); }
 }
 
-.animated {
-  animation: translateY 2s linear infinite;
+@media (min-width: 768px) {
+  .animated {
+    animation: translateY 2s linear infinite;
+  }
 }

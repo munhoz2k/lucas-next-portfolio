@@ -78,7 +78,7 @@ export default function ProjectsSection({
       initial={{ x: -200, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ duration: 1 }}
-      viewport={{ once: true, amount: .2 }}
+      viewport={{ once: true, amount: .1 }}
       className='mt-48'
       id='projects-section'
     >

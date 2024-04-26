@@ -15,7 +15,7 @@ export default function SkillIcon({ children, description, redirectUrl, animatio
       initial={{ y: -100, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ delay: animationDelay, duration: .5 }}
-      viewport={{ once: true, amount: 'some' }}
+      viewport={{ once: true }}
       className='group relative'
     >
       <Link
