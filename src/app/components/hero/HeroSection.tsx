@@ -28,7 +28,7 @@ export default function HeroSection({ helloTitle, myJob, introText, hireButton, 
         <div className='col-span-7 place-self-center'>
           <h1 className='mb-4 text-center md:text-left font-extrabold'>
             <span
-              className='text-4xl md:text-5xl lg:text-6xl text-transparent
+              className='max-[500px]:text-3xl text-4xl md:text-5xl lg:text-6xl text-transparent
               bg-clip-text bg-gradient-to-br from-brand-color to-dark-accent'
             >
               {helloTitle}

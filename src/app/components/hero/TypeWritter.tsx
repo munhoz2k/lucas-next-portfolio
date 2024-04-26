@@ -8,7 +8,7 @@ interface TypeWritterProps {
 export default function TypeWritter({ myJob }: TypeWritterProps) {
   return (
     <TypeAnimation
-      className='text-3xl md:text-4xl lg:text-5xl text-black'
+      className='max-[768px]:h-16 max-[1280px]:h-20 text-3xl md:text-4xl lg:text-5xl text-black'
       sequence={[
         'Lucas Munhoz',
         1000,
