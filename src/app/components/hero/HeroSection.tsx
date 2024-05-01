@@ -68,7 +68,7 @@ export default function HeroSection({ helloTitle, myJob, introText, hireButton, 
           className='col-span-5 place-self-end mt-8 md:mt-0 max-md:hidden'
         >
           <Image
-            className='animated'
+            className='md:animate-translateY md:size-[280px] lg:size-[420px] xl:size-[510px] 2xl:size-[600px]'
             src={ilustration}
             alt='GIF'
           />

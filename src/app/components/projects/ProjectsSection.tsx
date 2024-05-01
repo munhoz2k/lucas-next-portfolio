@@ -79,7 +79,7 @@ export default function ProjectsSection({
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ duration: 1 }}
       viewport={{ once: true, amount: .1 }}
-      className='mt-48'
+      className='md:mt-52 mt-36'
       id='projects-section'
     >
       <h1
