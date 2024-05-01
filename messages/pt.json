@@ -22,7 +22,7 @@
   "projects": {
     "title": "Meus Projetos",
     "ignitersDesc": "E-commerce de camisetas feito com NextJS, integrado com a API de pagamento Stripe",
-    "pizzaShopDesc": "Página web em React para gestão de entregas do restaurantes, permitindo listagem e controle dos pedidos",
+    "pizzaShopDesc": "Página web em React para gestão de entregas dos restaurantes, permitindo listagem e controle dos pedidos",
     "githubBlogDesc": "Blog em React para visualizar todos os seus Issues do GitHub, integrado com a API do GitHub",
     "santoCafeDesc": "Página web em React para entregas de café",
     "dtMoneyDesc": "Página web em React para gerenciamento de finanças pessoais, permitindo aos usuários acompanhar seus gastos"
