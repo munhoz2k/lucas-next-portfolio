@@ -1,6 +1,9 @@
+import { notFound } from 'next/navigation'
+import { unstable_setRequestLocale } from 'next-intl/server'
 import { useTranslations } from 'next-intl'
 import { Toaster } from 'sonner'
 
+import { localesTerm } from '@/locales'
 import HeroSection from '@/app/components/hero/HeroSection'
 import NavBar from '@/app/components/nav/NavBar'
 import AboutSection from '../components/about/AboutSection'
@@ -9,9 +12,16 @@ import EmailSection from '../components/email/EmailSection'
 import SkillSection from '../components/skills/SkillSection'
 import Footer from '../components/footer/Footer'
 
-import './globals.css'
+import '../globals.css'
 
-export default function Home() {
+interface HomeProps {
+  params: { locale: string }
+}
+
+export default function Home({ params: { locale } }: HomeProps) {
+  if (!localesTerm.includes(locale)) notFound()
+  unstable_setRequestLocale(locale)
+
   const navBarMessages = useTranslations('navBar')
   const heroMessages = useTranslations('hero')
   const aboutMeMessages = useTranslations('aboutMe')
@@ -21,7 +31,7 @@ export default function Home() {
   const footerMessages = useTranslations('footer')
 
   return (
-    <main className="flex flex-col">
+    <main className="bg-main flex flex-col">
       <Toaster
         toastOptions={{
           classNames: {
