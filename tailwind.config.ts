@@ -8,10 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      keyframes: {
+        translateY: {
+          '0%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(30px)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        'translateY': 'translateY 2s linear infinite',
       },
       colors: {
         'light-shades': '#F3F4F4',
@@ -21,11 +26,11 @@ const config: Config = {
         'dark-shades': '#372A40',
       },
       boxShadow: {
-        'style-1': `rgba(0, 0, 0, 0.15) 5px 5px, rgba(0, 0, 0, 0.15) 10px 10px,
-        rgba(0, 0, 0, 0.10) 15px 15px, rgba(0, 0, 0, 0.05) 20px 20px`,
-
+        'style-1': `
+          rgba(0, 0, 0, 0.15) 5px 5px, rgba(0, 0, 0, 0.15) 10px 10px,
+          rgba(0, 0, 0, 0.10) 15px 15px, rgba(0, 0, 0, 0.05) 20px 20px
+        `,
         'style-2': `rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px`,
-
         'hover-1': `0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);`
       }
     },
