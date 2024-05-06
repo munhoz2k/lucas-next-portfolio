@@ -53,14 +53,16 @@ export default function HeroSection({ helloTitle, myJob, introText, hireButton, 
               </button>
             </Link>
 
-            <button
-              className='px-10 py-2 w-full bg-brand-color text-light-shades text-lg
-              rounded-xl shadow-md outline-none hover:ring-2 hover:ring-brand-color
-              hover:shadow-lg hover:shadow-brand-color hover:-translate-y-1
-              lg:px-10 md:w-fit lg:text-2xl transition-all duration-300'
-            >
-              {CVbutton}
-            </button>
+            <Link href="/munhoz-cv.pdf">
+              <button
+                className='px-10 py-2 w-full bg-brand-color text-light-shades text-lg
+                rounded-xl shadow-md outline-none hover:ring-2 hover:ring-brand-color
+                hover:shadow-lg hover:shadow-brand-color hover:-translate-y-1
+                lg:px-10 md:w-fit lg:text-2xl transition-all duration-300'
+              >
+                {CVbutton}
+              </button>
+            </Link>
           </div>
         </div>
 
