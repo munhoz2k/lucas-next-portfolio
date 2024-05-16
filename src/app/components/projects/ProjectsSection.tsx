@@ -37,8 +37,8 @@ export default function ProjectsSection({
       image: '/images/projects/pizza-shop-page.png',
       github: 'https://github.com/munhoz2k/pizza-shop',
       host: {
-        online: false,
-        pageUrl: ''
+        online: true,
+        pageUrl: 'https://pizza-shop-self.vercel.app/'
       }
     },
     {
