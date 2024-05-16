@@ -16,6 +16,7 @@ You can check the page here: [My Portfolio](https://www.munhoz.tech/en).
 - [@next.js](https://nextjs.org/)
 - [@react](https://react.dev/)
 - [@tailwind](https://tailwindcss.com/)
+- [@i18n](https://github.com/amannn/next-intl)
 - [@typescript](https://www.typescriptlang.org/)
 - [@eslint](https://eslint.org/)
 - [@prettier](https://prettier.io/)
