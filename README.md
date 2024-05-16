@@ -7,7 +7,7 @@
 </p>
 
 Welcome to my portfolio!
-It's still in development and it will be deployed soon on [Vercel](https://vercel.com/munhoz2ks-projects)...
+You can check the page here: [My Portfolio](https://www.munhoz.tech/en).
 
 # About
 - This is my beautiful portfolio made with [Next.js](https://nextjs.org/) containing all my professional infos
